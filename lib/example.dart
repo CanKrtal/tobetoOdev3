@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:deneme/models/question.dart';
 import 'data/question_data.dart';
+import 'result_screen.dart';
+
 class Example extends StatefulWidget {
   const Example({Key? key}) : super(key: key);
 
@@ -37,44 +39,18 @@ class _ExampleState extends State<Example> {
     });
   }
 
-
-
   void _showResults() {
-    showDialog(
-      useSafeArea: mounted,
-      context: context,
-      builder: (_) => AlertDialog(
-        scrollable: true,
-        title: const Text('Sonuçlar'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: List.generate(
-            _questions.length,
-                (index) {
-              final isCorrect = _userAnswers[index] ==
-                  _questions[index].answers
-                      .firstWhere((answer) => answer.isCorrect)
-                      .answer;
-              return ListTile(
-                title: Text(
-                  'Soru ${index + 1}: ${isCorrect ? "Doğru" : "Yanlış"}',
-                  style: TextStyle(
-                    color: isCorrect ? Colors.green : Colors.red,
-                  ),
-                ),
-              );
-            },
-          ),
+    showResults();
+  }
+
+  void showResults() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ResultScreen(
+          questions: _questions,
+          userAnswers: _userAnswers,
         ),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text('Kapat'),
-          ),
-        ],
       ),
     );
   }
@@ -82,7 +58,9 @@ class _ExampleState extends State<Example> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: const Text('Sorular'),
       ),
       body: Column(
@@ -105,8 +83,10 @@ class _ExampleState extends State<Example> {
                 _saveAnswer(answer.answer);
                 _nextQuestion();
               },
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.lightGreen),
               child: Text(answer.answer),
             );
+              TextStyle(color: Colors.white);
           }).toList(),
           const SizedBox(height: 20),
           Row(

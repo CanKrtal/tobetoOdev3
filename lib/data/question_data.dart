@@ -6,40 +6,42 @@ List<Question> questions = [
     question:
     "Aşağıdakilerden hangisi flutterda state'i update eden fonksiyondur?",
     answers: [
-      Answer(answer: "setState", isCorrect: false),
+      Answer(answer: "setState", isCorrect: true),
       Answer(answer: "constructor", isCorrect: false),
       Answer(answer: "readState", isCorrect: false),
-      Answer(answer: "writeState", isCorrect: true),
+      Answer(answer: "writeState", isCorrect: false),
     ],
   ),
   Question(
     question:
     "Flutter hangi dili kullanır?",
     answers: [
-      Answer(answer: "javascript", isCorrect: false),
-      Answer(answer: "dart", isCorrect: false),
+      Answer(answer: "php", isCorrect: false),
+      Answer(answer: "dart", isCorrect: true),
       Answer(answer: "c#", isCorrect: false),
-      Answer(answer: "java", isCorrect: true),
+      Answer(answer: "java", isCorrect: false),
     ],
   ),
   Question(
     question:
-    "Flutter ile mobil uygulama geliştirmek için hangi platformlarda çalışabiliriz?",
+    "Flutter'da BuildContext nedir?",
     answers: [
-      Answer(answer: "iOS", isCorrect: false),
-      Answer(answer: "Android", isCorrect: false),
-      Answer(answer: "Windows", isCorrect: true),
-      Answer(answer: "macOS", isCorrect: false),
+      Answer(answer: "Widget'in durumunu saklamak için kullanılan bir veri türü", isCorrect: false),
+      Answer(answer: "Widget'in yapısını tanımlayan bir yapı", isCorrect: false),
+      Answer(answer: "Widget'in içinde yer aldığı yapıyı tanımlayan bir yapı", isCorrect: true),
+      Answer(answer: "Widget'in boyutunu belirleyen bir yapı", isCorrect: false),
+      Answer(answer: "Widget'in renklerini ve stili tanımlayan bir yapı", isCorrect: false),
     ],
   ),
   Question(
     question:
-    "Flutter ile hangi tür uygulamalar geliştirilebilir?",
+    "Flutter'da Scaffold widget'i neyi temsil eder?",
     answers: [
-      Answer(answer: "Mobil", isCorrect: true),
-      Answer(answer: "Web", isCorrect: false),
-      Answer(answer: "Masaüstü", isCorrect: false),
-      Answer(answer: "Tümü", isCorrect: false),
+      Answer(answer: "Uygulamanın genel temasını", isCorrect: false),
+      Answer(answer: "Animasyonları", isCorrect: false),
+      Answer(answer: "Kullanıcı girişi alanlarını", isCorrect: false),
+      Answer(answer: "Grafikleri", isCorrect: false),
+      Answer(answer: "Ekranın düzenini", isCorrect: true),
     ],
   ),
   Question(
@@ -54,62 +56,66 @@ List<Question> questions = [
   ),
   Question(
     question:
-    "Flutter'da stateful widget nedir?",
+    "Flutter'da Hot Reload ne işe yarar?",
     answers: [
-      Answer(answer: "State tutabilen widget", isCorrect: true),
-      Answer(answer: "State yönetmeyen widget", isCorrect: false),
-      Answer(answer: "Statik widget", isCorrect: false),
-      Answer(answer: "Dinamik widget", isCorrect: false),
+      Answer(answer: "Uygulamanın yalnızca kodunu yeniden yükler", isCorrect: false),
+      Answer(answer: " Uygulamanın tüm kaynaklarını yeniden yükler", isCorrect: false),
+      Answer(answer: "Kod değişikliklerini hızlıca uygulamaya yansıtır", isCorrect: true),
+      Answer(answer: "Uygulamayı yeniden derler", isCorrect: false),
+      Answer(answer: "Uygulamadaki tüm verileri sıfırlar", isCorrect: false),
     ],
   ),
   Question(
     question:
     "Flutter projesi hangi dosya ile başlatılır?",
     answers: [
-      Answer(answer: "main.dart", isCorrect: true),
       Answer(answer: "app.dart", isCorrect: false),
       Answer(answer: "index.dart", isCorrect: false),
+      Answer(answer: "main.dart", isCorrect: true),
       Answer(answer: "start.dart", isCorrect: false),
     ],
   ),
   Question(
     question:
-    "Flutter'da hangi dil kullanılır?",
+    "Flutter'da AppBar widget'i ne işe yarar?",
     answers: [
-      Answer(answer: "Dart", isCorrect: true),
-      Answer(answer: "Java", isCorrect: false),
-      Answer(answer: "Kotlin", isCorrect: false),
-      Answer(answer: "Swift", isCorrect: false),
+      Answer(answer: "Sayfanın başlığını ve işlevlerini gösterir.", isCorrect: true),
+      Answer(answer: "Animasyonları kontrol eder.", isCorrect: false),
+      Answer(answer: "Veritabanı işlemleri gerçekleştirir.", isCorrect: false),
+      Answer(answer: "Kullanıcı etkileşimlerini dinler.", isCorrect: false),
+      Answer(answer: "Ekranların düzenini belirler.", isCorrect: false),
     ],
   ),
   Question(
     question:
     "Flutter'da widgetlar nasıl hiyerarşik yapıda kullanılır?",
     answers: [
-      Answer(answer: "Ağaç yapısı", isCorrect: true),
       Answer(answer: "Daire yapısı", isCorrect: false),
       Answer(answer: "Düz yapı", isCorrect: false),
       Answer(answer: "Üçgen yapı", isCorrect: false),
+      Answer(answer: "Ağaç yapısı", isCorrect: true),
     ],
   ),
   Question(
     question:
-    "Flutter ile hangi dilde kodlama yapılır?",
+    "Flutter'da Container widget'i ne işe yarar?",
     answers: [
-      Answer(answer: "Dart", isCorrect: true),
-      Answer(answer: "JavaScript", isCorrect: false),
-      Answer(answer: "Python", isCorrect: false),
-      Answer(answer: "C#", isCorrect: false),
+      Answer(answer: "Veri tabanı işlemleri için kullanılır", isCorrect: false),
+      Answer(answer: "Bir liste oluşturmak için kullanılır", isCorrect: false),
+      Answer(answer: "Diğer widget'ları düzenlemek için kullanılır", isCorrect: true),
+      Answer(answer: "Animasyonlar oluşturmak için kullanılır", isCorrect: false),
+      Answer(answer: "Kullanıcı girişi almak için kullanılır", isCorrect: false),
     ],
   ),
   Question(
     question:
-    "Flutter'da nasıl bir mimari kullanılır?",
+    "Flutter'da Navigator ne işe yarar?",
     answers: [
-      Answer(answer: "UI toolkit", isCorrect: true),
-      Answer(answer: "UI framework", isCorrect: false),
-      Answer(answer: "UI library", isCorrect: false),
-      Answer(answer: "UI design", isCorrect: false),
+      Answer(answer: " Kullanıcı etkileşimlerini dinlemek için kullanılır", isCorrect: false),
+      Answer(answer: " Bir ekranı diğerine geçiş yapmak için kullanılır", isCorrect: true),
+      Answer(answer: "Uygulama simgelerini düzenlemek için kullanılır", isCorrect: false),
+      Answer(answer: "Widget'ları düzenlemek için kullanılır", isCorrect: false),
+      Answer(answer: "Uygulama menülerini oluşturmak için kullanılır", isCorrect: false),
     ],
   ),
 ];

@@ -5,7 +5,7 @@ class ResultScreen extends StatelessWidget {
   final List<Question> questions;
   final List<String?> userAnswers;
 
-  const ResultScreen({
+  const ResultScreen({super.key, 
     required this.questions,
     required this.userAnswers,
   });
@@ -13,13 +13,16 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       appBar: AppBar(
-        title: Text('Sonuçlar'),
+        centerTitle: true,
+        title: const Text('SONUÇLAR',style:TextStyle(color:Colors.orangeAccent)),
+        backgroundColor: const Color.fromARGB(255, 5, 50, 80),
       ),
       body: AlertDialog(
+        backgroundColor: Colors.brown,
         scrollable: true,
-        title: Text('Sonuçlar'),
+        title: const Text('Sonuçlar',style:TextStyle(color:Colors.orangeAccent)),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +49,7 @@ class ResultScreen extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            child: Text('Kapat'),
+            child: const Text('Kapat',style:TextStyle(color:Colors.orangeAccent)),
           ),
         ],
       ),

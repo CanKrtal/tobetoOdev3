@@ -58,35 +58,54 @@ class _ExampleState extends State<Example> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color.fromARGB(255, 5, 50, 80),
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
-        title: const Text('Sorular'),
+        centerTitle: true,
+        title: const Text('QUİZ APP',style: TextStyle(color: Colors.orangeAccent),),
+        toolbarHeight: 100,
+        backgroundColor: Color.fromARGB(255, 5, 50,80),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             'Soru ${_questionIndex + 1}/${_questions.length}',
-            style: const TextStyle(fontSize: 20),
+            style:  const TextStyle(
+              color:Colors.white,
+              fontSize: 20,
+              fontWeight:FontWeight.w600,
+              ),
           ),
           const SizedBox(height: 20),
-          Text(
+          Container(
+            alignment: Alignment.center,
+            width:double.infinity,
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.orangeAccent,
+               borderRadius: BorderRadius.circular(16),
+            ),
+
+          
+         child: Text(
             _questions[_questionIndex].question,
-            style: const TextStyle(fontSize: 20),
+            style:  TextStyle(
+              color:Color.fromARGB(255, 5, 50, 80),
+              fontWeight: FontWeight.w600,
+              fontSize: 20),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 10),
+          ),
+            const SizedBox(height: 10),
           ..._questions[_questionIndex].answers.map((answer) {
             return ElevatedButton(
               onPressed: () {
                 _saveAnswer(answer.answer);
                 _nextQuestion();
               },
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.lightGreen),
-              child: Text(answer.answer),
+              child: Text(answer.answer,style:TextStyle(color: Color.fromARGB(255, 5, 50, 80)),),
+              style:ElevatedButton.styleFrom(backgroundColor: Colors.orangeAccent)
             );
-              TextStyle(color: Colors.white);
           }).toList(),
           const SizedBox(height: 20),
           Row(
@@ -95,12 +114,15 @@ class _ExampleState extends State<Example> {
               if (_questionIndex > 0)
                 ElevatedButton(
                   onPressed: _prevQuestion,
-                  child: const Text('Önceki Soru'),
+                  child:  Text('Önceki Soru', style:TextStyle(color:Color.fromARGB(255, 5, 50, 80)),),
+                  style:ElevatedButton.styleFrom(backgroundColor:Colors.orangeAccent )
                 ),
               if (_questionIndex < _questions.length - 1)
                 ElevatedButton(
                   onPressed: _nextQuestion,
-                  child: const Text('Sonraki Soru'),
+                  child: const Text('Sonraki Soru',style:TextStyle(color:Color.fromARGB(255, 5, 50, 80)),),
+                  style:ElevatedButton.styleFrom(backgroundColor:Colors.orangeAccent )
+
                 ),
             ],
           ),
